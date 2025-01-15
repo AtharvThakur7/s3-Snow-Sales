@@ -168,12 +168,38 @@ def main(session: snowpark.Session):
 
 4. ***Total Orders***:
 
-- The business processed 3.51K orders, showing a reasonable volume given the high-value products like electronics.
+- The business processed 4K total orders, showcasing a reasonable volume for high-value products like electronics and home appliances.
 
 5. ***Sales by City*** :
 
-- Major cities like Mumbai, Pune, Hyderabad, and Bangalore dominate sales.
-- Tier 2 cities such as Indore and Nagpur also contribute significantly, indicating a balanced urban-rural penetration strategy. 
+- Major cities such as Mumbai, Bangalore, Delhi, and Pune dominate sales, reflecting strong urban demand.
+- Tier-2 cities, including Nagpur, Bhopal, and Visakhapatnam, contribute less, highlighting opportunities for growth and market expansion in these regions.
+
+## b> Part 2 - Top and Bottom Product Performance
+
+![image alt]()
+
+1.***Top/Bottom 5 Products by Sales***:
+
+- High-ticket items like Apple iPhone 14 (22M), Apple MacBook Air (21M), and Sony Bravia 55” TV (21M) dominate revenue, reflecting strong demand for premium electronics
+- Products like Colgate Toothpaste (22.3K) and Dove Soap Pack (86.5K) show significantly lower sales.
+
+
+2.***Top/Bottom 5 Products by Unit Sold***:
+
+- Apple iPhone 14 (281 units) and HP Pavilion Laptop (230 units) lead in both sales and quantity sold, underscoring their popularity and trust in the market.
+
+- Items like Nivea Body Lotion (219 units) and Tupperware Lunch Box (215 units) rank at the bottom in units sold, suggesting limited appeal or being niche products.
+
+
+3.***Top/Bottom 5 Products by Profit*** :
+
+- Apple iPhone 14 (2.25M), Apple MacBook Air (2.08M), and Sony Bravia 55” TV (2.05M) are the top profit contributors, driven by their premium pricing and strong demand.
+
+- Products like Tupperware Lunch Box (28K) and Colgate Toothpaste (2K) yield minimal profits, likely due to low margins or small market sizes
+
+
+## c> Part 3  - Comparative Sales and Profit Analysis
 
 
   
