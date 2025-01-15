@@ -23,7 +23,7 @@ ElectroHub, a multi-category retail company, seeks to optimize its sales perform
 
 ## Data Model 
 
-![image alt ]()
+![image alt ](https://github.com/AtharvThakur7/s3-Snow-Sales/blob/c2bf344f7e772ada246f8c697e2aa967bea20428/Screenshot%202025-01-15%20210607.png)
 
 
 ***Fact Table***: The Fact Table captures transactional data, including:
@@ -39,3 +39,5 @@ This table stores the core numerical data for analysis.
 - Promotion: Includes promotion details (e.g., Summer Sale, Festive Diwali, etc.), discount coupons, percentages, and values associated with each promotion.
 - Date Table 1: Represents an active relationship to the Fact Table based on the transaction date, supporting time-based analysis (daily, monthly, etc.).
 - Date Table 2: Represents an inactive relationship, used for specific date-based calculations such as comparing different time periods or analyzing data across alternate date ranges.
+
+
