@@ -149,7 +149,31 @@ def main(session: snowpark.Session):
 # Business InSights
 ##  a> Part 1  - Sales Trends and Key Metrics Analysis
 
-![image alt]()
+![image alt](https://github.com/AtharvThakur7/s3-Snow-Sales/blob/8d2344fbf7b0c8f90f612e93529de6af34476612/Screenshot%202025-01-15%20191003.png)
+
+
+1. ***Relationship Between Sales And Profit*** :  
+ The scatter plot reveals a positive correlation between sales and profit. Higher net sales generally translate to higher profits.
+
+2. ***Sales Trends Over Time*** :
+
+- Annual net sales show a slight decline from 2020 to 2024, peaking at 32M in 2023 but dropping in 2024.
+- seasonal promotions, such as "Summer Sale" and "Weekend Flash Sale," drive significant spikes in sales during their respective periods.
+
+ 3. ***Average Discount Offered in Categories***:
+
+- Weekend Flash Sales have the highest average discount (23K), followed by Clearance Sales (18K).
+
+- Minimal discounts (or none) are observed for Festive Diwali and New Year Special, indicating premium pricing strategies during festive periods.
+
+4. ***Total Orders***:
+
+- The business processed 3.51K orders, showing a reasonable volume given the high-value products like electronics.
+
+5. ***Sales by City*** :
+
+- Major cities like Mumbai, Pune, Hyderabad, and Bangalore dominate sales.
+- Tier 2 cities such as Indore and Nagpur also contribute significantly, indicating a balanced urban-rural penetration strategy. 
 
 
   
