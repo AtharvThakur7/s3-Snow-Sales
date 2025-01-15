@@ -1,12 +1,10 @@
 # Retail Sales and Profitability Analysis for ElectroHub Using AWS S3 , SNOWFLAKE and POWER BI
 
-Led a strategic sales analysis for ElectroHub using Power BI to visualize key metrics like sales, profit, and quantity sold across diverse product categories. The analysis focused on identifying top-performing products, understanding sales trends, and evaluating the correlation between sales and profitability. By deriving actionable insights, the project enabled data-driven decision-making, optimizing discount strategies, and prioritizing high-performing categories to accelerate business growth and profitability.
+Led a strategic sales analysis for ElectroHub using Power BI Followed by ELT pipeline using AWS S3 for Storage and SNOWFLAKE for Transformation  to visualize key metrics like sales, profit, and quantity sold across diverse product categories. The analysis focused on identifying top-performing products, understanding sales trends, and evaluating the correlation between sales and profitability. By deriving actionable insights, the project enabled data-driven decision-making, optimizing discount strategies, and prioritizing high-performing categories to accelerate business growth and profitability.
 
 # Project Architecture
 
 ![image alt ](https://github.com/AtharvThakur7/s3-Snow-Sales/blob/599244e6d9c136907e47adee79f2e684207707a2/Screenshot%202025-01-15%20220608.png)
-
-
 
 ## Problem Statement 
 
