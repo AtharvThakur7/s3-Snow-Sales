@@ -19,8 +19,9 @@ ElectroHub, a multi-category retail company, seeks to optimize its sales perform
 - Visualizing sales distribution across different cities.
 - Identifying the top profit-generating categories to prioritize strategic focus.
 
-## Data Model 
+## Dimension Model And Transformation 
 
+# a> Dimension Model
 ![image alt ](https://github.com/AtharvThakur7/s3-Snow-Sales/blob/c2bf344f7e772ada246f8c697e2aa967bea20428/Screenshot%202025-01-15%20210607.png)
 
 
@@ -37,5 +38,118 @@ This table stores the core numerical data for analysis.
 - Promotion: Includes promotion details (e.g., Summer Sale, Festive Diwali, etc.), discount coupons, percentages, and values associated with each promotion.
 - Date Table 1: Represents an active relationship to the Fact Table based on the transaction date, supporting time-based analysis (daily, monthly, etc.).
 - Date Table 2: Represents an inactive relationship, used for specific date-based calculations such as comparing different time periods or analyzing data across alternate date ranges.
+
+ # b>Transformation
+
+
+
+
+ ***SQL Transformation in SnowFlake***:
+
+```bash
+-- lets performed tranformation and build DIMENSION MODEL
+
+SELECT * FROM sales.raw_sales.customer;
+SELECT * FROM sales.raw_sales.product;
+SELECT * FROM sales.raw_sales.promotion;
+SELECT * FROM sales.raw_sales.sales;
+
+-- Tranforming the sales fact table by calculating numeric facts by joining the table and also handle null values using COALESCE()
+
+CREATE TABLE transformed_sales AS (
+    SELECT  
+        s.sales_id,
+        s.date_col,
+        s.customer_id,
+        s.promotion_id,
+        s.product_id,
+        s.units_sold,
+        COALESCE(p.price, 0) AS price_per_unit,
+        COALESCE(s.units_sold * p.price, 0) AS total_sales,
+        COALESCE(pr.discount, 0) AS discount_percentage,
+        (COALESCE(s.units_sold * p.price, 0) * COALESCE(pr.discount, 0)) / 100 AS discount_value,
+        (COALESCE(s.units_sold * p.price, 0) - 
+         (COALESCE(s.units_sold * p.price, 0) * COALESCE(pr.discount, 0)) / 100) AS net_sales,
+        (COALESCE(s.units_sold * p.price, 0) * 0.1) AS profit
+
+    FROM SALES.RAW_SALES.sales s
+
+    LEFT JOIN SALES.RAW_SALES.product p
+    ON s.product_id = p.product_id
+
+    LEFT JOIN SALES.RAW_SALES.PROMOTION pr
+    ON s.promotion_id = pr.promotion_id
+);
+
+
+select * from SALES.TRANFORMED_SALES.TRANSFORMED_SALES;
+DROP TABLE tranformed_sales;
+
+
+CREATE TABLE dim_customer AS (
+    SELECT * FROM SALES.RAW_SALES.CUSTOMER
+);
+
+
+SELECT * FROM dim_customer;
+
+CREATE TABLE dim_product AS (
+    SELECT * FROM SALES.RAW_SALES.PRODUCT
+);
+
+SELECT * FROM dim_product;
+
+CREATE TABLE dim_promotion AS (
+    SELECT * FROM SALES.RAW_SALES.PROMOTION
+);
+
+
+SELECT * FROM dim_promotion;
+
+```
+
+***Python Transformation in SnowFlake***: 
+
+```bash
+import snowflake.snowpark as snowpark
+from snowflake.snowpark.functions import col, regexp_replace, regexp_extract
+
+def main(session: snowpark.Session): 
+
+    # tranforming the promotion table to extract discount value from reduction_type column
+    
+    
+    # Step 1: Load the raw promotion table from the raw_sales schema
+    promotion_df = session.table('raw_sales.promotion')
+
+    # Step 2: Replace "Buy 1 Get 1 Free" with "50" in the Price_Reduction_Type column
+    promotion_df = promotion_df.with_column(
+        'reduction_type',
+        regexp_replace(col('reduction_type'), 'Buy 1 Get 1 Free', '50')
+    )
+
+    # Step 3: Extract numeric discount values from the 'Price_Reduction_Type' column
+    promotion_df = promotion_df.with_column(
+        'discount',
+        regexp_extract(col('reduction_type'), r'(\d+)', 1).cast('int')
+    )
+
+    # Step 4: Overwrite the existing raw_sales.promotion table with the transformed data
+    promotion_df.write.mode('overwrite').save_as_table('raw_sales.promotion')
+
+    # Step 5: Display a sample of the transformed table in the output
+    promotion_df.show()
+
+    # Step 6: Return a preview of the updated data for the Results tab
+    return promotion_df.limit(5)
+
+```
+
+
+  
+  
+
+
+  
 
 
