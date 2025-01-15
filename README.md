@@ -210,6 +210,28 @@ def main(session: snowpark.Session):
 
  - From the given trends, consistent sales (~122M) and profits (~12.2M) suggest a steady performance.
 
+
+
+## Conclusion and Impact
+
+1. ***Conclusion*** :
+
+- The electronics category continues to lead in sales and profitability, proving its central role in the business strategy.
+
+- While flash sales drive volume, discounts must be optimized to sustain profitability.
+  
+- Focus on high-value cities and improve marketing for underperforming product categories.
+
+
+
+2. ***Business Impact***:
+
+- Improving profitability requires targeting high-margin products and optimizing promotional expenses.
+
+- Geographic expansion in Tier 2 cities and festive sales can sustain long-term growth.
+
+- Regularly updating the product portfolio ensures competitiveness and mitigates the risk of declining trends.
+
   
   
 
