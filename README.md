@@ -177,7 +177,7 @@ def main(session: snowpark.Session):
 
 ## b> Part 2 - Top and Bottom Product Performance
 
-![image alt]()
+![image alt](https://github.com/AtharvThakur7/s3-Snow-Sales/blob/e4d56ba5407e53dbbacdbe5c28150f2c9300ff8f/Screenshot%202025-01-15%20191141.png)
 
 1.***Top/Bottom 5 Products by Sales***:
 
@@ -201,6 +201,14 @@ def main(session: snowpark.Session):
 
 ## c> Part 3  - Comparative Sales and Profit Analysis
 
+![image alt](https://github.com/AtharvThakur7/SalesData-Analytics/blob/ea153fde828db80cde7fbdc529fcd90357d4a167/Screenshot%202025-01-07%20222413.png)
+
+
+1. ***Comparison of Metrics Between Periods*** :
+
+- The dashboard facilitates direct comparison of sales, profit, and units sold for two custom timeframes.
+
+ - From the given trends, consistent sales (~122M) and profits (~12.2M) suggest a steady performance.
 
   
   
