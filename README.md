@@ -146,6 +146,12 @@ def main(session: snowpark.Session):
 ```
 
 
+# Business InSights
+##  a> Part 1  - Sales Trends and Key Metrics Analysis
+
+![image alt]()
+
+
   
   
 
